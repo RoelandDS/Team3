@@ -34,7 +34,7 @@ app.get('/qr', function (req, res) {
     connection.connect();
 
     connection.query('SELECT * from qr_code WHERE img_title LIKE "%FoxPaw Hacking%"', function (err, rows, fields) {
-        if (!err & rows.length > 0)
+        if (!err & rows != null)
             res.json(rows[0].img_data);
         else {
             res.status(404);

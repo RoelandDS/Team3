@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<!--
+FoxPaw Entertainment proprietary code.
+-->
+<html>
+<head>
+    <title>Philips Hue color picker</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet" type="txt/css" />
+    <link href="css/jqColor.css" media="all" rel="stylesheet" type="text/css" />
+</head>
+<body id="body">
+    <section id="container" class="element">
+        <header>
+            <h1 class="element">
+                Foxpaw Hacking
+            </h1>
+        </header>
+        <div class="content">
+            <div class="element">
+                <section>
+                    <section class="half" id="lefttop" onclick="turnRed()"><button>RED</button></section>
+                    <section class="half" id="righttop" onclick="turnGreen()"><button>GREEN</button></section>
+                </section>
+                <section>
+                    <section class="half" id="lefttop" onclick="turnBlue()"><button>BLUE</button></section>
+                    <section class="half" id="rightbottom" onclick="turnYellow()"><button>YELLOW</button></section>
+                </section>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="index.html" class="element">Go home</a>
+            <a href="colorpicker.html" class="element">Go to Philips Hue color picker</a>
+            <p><a href="https://www.linkedin.com/in/josipkoninckx">Josip Koninckx</a> &amp; Ben Elen - For <a href="http://www.pxl.be">PXL</a> - Hasselt</p>
+        </div>
+    </section>
+
+    <!-- Scripts-->
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/jshue.js"></script>
+    <script type="text/javascript" src="js/color.js"></script>
+    <script type="text/javascript" src="js/register.js"></script>
+    <script type="text/javascript" src="js/jqColor.js"></script>
+    <script type="text/javascript" src="js/jQueryColorPicker.min.js"></script>
+    <script type="text/javascript" src="js/animateBackground.js"></script>
+    <script>
+
+        var $colors = $('input.color').colorPicker({
+            customBG: '#222',
+            readOnly: true,
+            init: function (elm, colors) { // colors is a different instance (not connected to colorPicker)
+                elm.style.backgroundColor = elm.value;
+                elm.style.color = colors.rgbaMixCustom.luminance > 0.22 ? '#222' : '#ddd';
+            }
+        }).each(function (idx, elm) {
+            // $(elm).css({'background-color': this.value})
+        });
+
+    </script>
+</body>
+</html>
