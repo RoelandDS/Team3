@@ -10,15 +10,11 @@ var teamnaam = {
     ]
 };
 
+app.use(express.static(__dirname));
+
 // 1. Routes voor deze app - ten eerste de Homepage
 app.get('/', function (req, res) {
-    console.log("hier");
     res.send(JSON.stringify(teamnaam));
-});
-
-app.get('/home', function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.send();
 });
 
 
