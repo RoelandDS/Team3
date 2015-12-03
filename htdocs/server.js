@@ -11,16 +11,7 @@ var teamnaam = {
     ]
 };
 
-var connection = mysql.createConnection({
-    host: '173.194.105.180',
-    port: '3306',
-    user: 'student',
-    password: 'mulestudent',
-    database: 'training'
-});
-
 app.use(express.static(__dirname));
-
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -33,6 +24,13 @@ app.get('/', function (req, res) {
 });
 
 app.get('/qr', function (req, res) {
+	var connection = mysql.createConnection({
+		host: '173.194.105.180',
+		port: '3306',
+		user: 'student',
+		password: 'mulestudent',
+		database: 'training'
+	});
     connection.connect();
 
     connection.query('SELECT * from qr_code WHERE img_title LIKE "%FoxPaw Hacking%"', function (err, rows, fields) {
