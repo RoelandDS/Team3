@@ -37,6 +37,19 @@ FoxPaw Entertainment proprietary code.
                 var offset = (relMoveX * 100) + "% " + (relMoveY * 100) + "%";
                 $("#body").css({backgroundPosition: offset});
             }
+            
+            var hjs = HueJS({
+                    ipAddress: "10.0.1.3",
+                    devicetype:"test",
+                    username: "Garrus"
+            });
+                    hjs.authenticate(function(f){
+                    alert("Successfully Authenticated");
+                    },
+                            function(f){
+                            alert("Error connecting to Hue");
+                                    console.log(f);
+                            });
         </script>
     </head>
     <body id="body">
