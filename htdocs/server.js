@@ -14,10 +14,9 @@ app.use(express.static(__dirname));
 
 // 1. Routes voor deze app - ten eerste de Homepage
 app.get('/', function (req, res) {
-    res.send(JSON.stringify(teamnaam));
+    res.json(teamnaam);
 });
 
 
 
 app.listen(4000);
-console.log('Express-server gestart op http://localhost:3000');
