@@ -1,5 +1,5 @@
 {
-  "name": "Web app",
+  "name": "foxpawapp",
   "version": "1.0.0",
   "description": "Webserver voor Hack the future",
   "main": "server.js",
