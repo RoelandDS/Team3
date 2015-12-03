@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 
-// 2. JSON retour zenden
+// JSON retour zenden
 var teamnaam = {
     name: "FoxPaw Hacking",
     members: [
@@ -12,7 +12,13 @@ var teamnaam = {
 
 app.use(express.static(__dirname));
 
-// 1. Routes voor deze app - ten eerste de Homepage
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
+// Routes voor deze app - ten eerste de JSON
 app.get('/', function (req, res) {
     res.json(teamnaam);
 });
