@@ -7,9 +7,6 @@ function register() {
 
     var toSend = {name: "FoxPaw Hacking", members: [{name: "Ben Elen"}, {name: "Josip Koninckx"}]};
 
-    alert(connString);
-    alert(JSON.stringify(toSend));
-
     $.ajax(connString, {
         'data': JSON.stringify(toSend),
         'type': 'PUT',
