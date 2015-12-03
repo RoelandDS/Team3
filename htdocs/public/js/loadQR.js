@@ -6,8 +6,6 @@ function loadQR() {
     var connString = "http://localhost:4000/qr";
     $.get(connString, function (data, status) {
         var returnedData = data;
-        alert(returnedData["data"]);
-        alert(encode(returnedData["data"]));
         $('#imageWrapper').html('<img src="data:image/png;base64,' + encode(returnedData["data"]) + '" />');
     }, "json");
 }
