@@ -12,7 +12,7 @@ var teamnaam = {
 
 // 1. Routes voor deze app - ten eerste de Homepage
 app.get('/', function (req, res) {
-    res.writeHead(200, {'Content-Type' : 'application/json'});
+    console.log("hier");
     res.send(JSON.stringify(teamnaam));
 });
 
