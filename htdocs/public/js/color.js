@@ -36,11 +36,7 @@ var bridge = hue.bridge(ip);
  user = bridge.user(username);
  });
  
- $.get(connString, function (data, status) {
- returnedData = data;
- alert("Data: " + data.toString() + "\nStatus: " + status);
- ourLamp = returnedData[ourLampId];
- }, "json");
+
  */
 
 var username = "33bf4d2254c66f7e94dcee2924a923";
