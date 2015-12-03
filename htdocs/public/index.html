@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+FoxPaw Entertainment proprietary code.
+-->
+<html>
+    <head>
+        <title>Control the Lamp</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="layout/style.css" rel="stylesheet" type="txt/css"/>
+        <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(initFunction);
+
+            var windowX;
+            var windowY;
+
+            function initFunction() {
+                windowResizer();
+                $('#body').mousemove(function (event) {
+                    mouseTracker(event);
+                });
+                $(window).resize(function (event) {
+                    windowResizer(event);
+                });
+            }
+
+            function windowResizer(event) {
+                windowX = $(window).width();
+                windowY = $(window).height();
+            }
+
+            function mouseTracker(event) {
+                var relMoveX = event.clientX / windowX;
+                var relMoveY = event.clientY / windowY;
+
+                var offset = (relMoveX * 100) + "% " + (relMoveY * 100) + "%";
+                $("#body").css({backgroundPosition: offset});
+            }
+        </script>
+    </head>
+    <body id="body">
+        <h1>Do things here</h1>
+    </body>
+</html>
