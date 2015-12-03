@@ -1,11 +1,10 @@
 /* 
  * FoxPaw Entertainment proprietary code.
  */
-
-$(document).ready(initFunction);
-
 var windowX;
 var windowY;
+
+$(document).ready(initFunction);
 
 function initFunction() {
     windowResizer();
@@ -26,7 +25,7 @@ function mouseTracker(event) {
     var relMoveX = event.clientX / windowX;
     var relMoveY = event.clientY / windowY;
 
-    var offset = (relMoveX * 100) + "% " + (relMoveY * 100) + "%";
+    var offset = (relMoveX * 100) + "% " + (relMoveY * 0) + "%";
     $("#body").css({backgroundPosition: offset});
 }
 

@@ -26,26 +26,26 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
-html {
+body, html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:white;
     background-color: #000;
     background-image: url('../img/back.jpg');
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-attachment: fixed;
 }
-body, html {
-    height: 100%;
-    width: 100%;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:white;
-}
 
 h1 {
-    font-size: 28pt;
+    font-size: 2em;
 }
 #container {
     width: 80%;
     height: 80%;
+    min-height:600px;
+    min-width: 500px;
     background-color:rgba(255,0,0,0.2);
     margin: auto;
     border-radius: 25px;
@@ -77,6 +77,12 @@ header {
   transform: translateY(-50%);
 }
 button {
+    min-height:25px;
+    min-width:50px;
     height: 10%;
     width: 10%;
+    background-color: darkred;
+    font-weight:bold;
+    border-radius: 25px;
+    border: 2px solid #000;
 }
