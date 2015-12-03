@@ -91,7 +91,7 @@ function turnRed() {
 }
 
 function turnYellow() {
-    setHue(12750, 200, 254);
+    setHue(15000, 200, 254);
 }
 
 function turnBlue() {
@@ -99,7 +99,7 @@ function turnBlue() {
 }
 
 function turnGreen() {
-    setHue(25500, 200, 254);
+    setHue(25500, 250, 254);
 }
 
 turnRed();

@@ -37,7 +37,9 @@ body, html {
     background-position: 50% 50%;
     background-attachment: fixed;
 }
-
+a {
+    color:white;
+}
 h1 {
     font-size: 2em;
 }
@@ -93,4 +95,8 @@ button {
    width:49%;
    margin-left: .5%;
    margin-right: .5%;
+}
+.half button {
+    width:80%;
+    margin:1%;
 }
