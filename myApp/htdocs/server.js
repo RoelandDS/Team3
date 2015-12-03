@@ -3,17 +3,23 @@ var app = express();
 
 // 1. Routes voor deze app - ten eerste de Homepage
 app.get('/', function (req, res) {
-	res.send('Hello World - dit is Express!');
+    res.writeHead(200, {'Content-Type' : 'application/json'});
+    res.send(JSON.stringify(teamnaam));
+});
+
+app.get('/home', function (req, res) {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.send();
 });
 
 // 2. JSON retour zenden
-var persoon = {
-	voornaam  : 'Peter',
-	achternaam: 'Kassenaar'
+var teamnaam = {
+    name: "FoxPaw Hacking",
+    members: [
+        { name: "Ben Elen" },
+        { name: "Josip Koninckx" }
+    ]
 };
-app.get('/json', function (req, res) {
-	res.send(persoon);
-});
 
-app.listen(3000);
+app.listen(4000);
 console.log('Express-server gestart op http://localhost:3000');
